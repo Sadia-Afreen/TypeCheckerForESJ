@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc82f25-c44e-4aa7-8a0d-7b9640bbc025" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TypeCheckerForESJ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TypeCheckerForESJ.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/esjc/ast/ExtendedStaticJavaASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/esjc/ast/ExtendedStaticJavaASTBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/esjc/parser/ExtendedStaticJava.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/esjc/parser/ExtendedStaticJava.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/esjc/test/ExtendedTypeCheckingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/esjc/test/ExtendedTypeCheckingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/esjc/type/checker/ExtendedTypeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/esjc/type/checker/ExtendedTypeChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +41,28 @@
     "last_opened_file_path": "G:/My Drive/Boise State University/Spring '24/Programming Language Translation/TypeCheckerForESJ/src",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="ExtendedTypeCheckingTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="TypeCheckerForESJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="esjc.test" />
+      <option name="MAIN_CLASS_NAME" value="test.ExtendedTypeCheckingTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -61,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710222906125</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Project setup with 148 passing 37 failing">
+      <created>1710223552984</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710223552984</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +103,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added files" />
+    <MESSAGE value="Project setup with 148 passing 37 failing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project setup with 148 passing 37 failing" />
   </component>
 </project>
