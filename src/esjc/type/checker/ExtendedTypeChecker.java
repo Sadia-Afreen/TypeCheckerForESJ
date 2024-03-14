@@ -118,7 +118,61 @@ public class ExtendedTypeChecker extends TypeChecker {
             return false;
         }
 
+        @Override
+        public boolean visit(final ExpressionStatement node) {
+            final Expression e = node.getExpression();
+            e.accept(this);
+            if (e instanceof Assignment) {
+                // assignment should not have a resulting type.
+                assert getResult() == null;
+            } else if (node.getExpression() instanceof MethodInvocation) {
+                // method invocation's result can be any type (including void)
+                // so we can ignore it.
+                getResult();
+            } else if (node.getExpression() instanceof PostfixExpression) {
+                node.getExpression().accept(this);
+                if (getResult() != this.tf.Int) {
+                    throw new Error(node,
+                            "Expecting an int type expression");
+                }
+            } else {
+                throw new Error(node, "Unexpected SimpleName: \'" + node + "\'");
+            }
+            return false;
+        }
 
+        @Override
+        public boolean visit(final PrefixExpression node) {
+            node.getOperand().accept(this);
+            final Type t = getResult();
+            final PrefixExpression.Operator op = node.getOperator();
+            if ((op == PrefixExpression.Operator.PLUS)
+                    || (op == PrefixExpression.Operator.MINUS)) {
+                if (t != this.tf.Int) {
+                    throw new Error(node,
+                            "Expecting an int type expression as the operand of \"" + op
+                                    + "\" in \"" + node + "\"");
+                }
+                setResult(node, this.tf.Int);
+            } else if (op == PrefixExpression.Operator.NOT) {
+                if (t != this.tf.Boolean) {
+                    throw new Error(node,
+                            "Expecting a boolean type expression as the operand of \"" + op
+                                    + "\" in \"" + node + "\"");
+                }
+                setResult(node, this.tf.Boolean);
+            } else if (op == PrefixExpression.Operator.COMPLEMENT) {
+                if (t != this.tf.Int) {
+                    throw new Error(node,
+                            "Expecting an int type expression as the operand of \"" + op
+                                    + "\" in \"" + node + "\"");
+                }
+                setResult(node, this.tf.Int);
+            } else {
+                throw new Error(node, "Unexpected PrefixExpression: \'" + node + "\'");
+            }
+            return false;
+        }
         @Override
         protected Type convertType(final ASTNode node,
                                    final org.eclipse.jdt.core.dom.Type t) {
