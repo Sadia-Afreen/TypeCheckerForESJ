@@ -173,6 +173,16 @@ public class ExtendedTypeChecker extends TypeChecker {
             }
             return false;
         }
+        
+        @Override
+        public boolean visit(final ClassInstanceCreation node) {
+            final Type t = convertType(node, node.getType());
+            setResult(node, t);
+            this.symbolMap.put(node, this.classMap.get(node.getType().toString()));
+            return false;
+        }
+
+
         @Override
         protected Type convertType(final ASTNode node,
                                    final org.eclipse.jdt.core.dom.Type t) {
